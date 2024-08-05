@@ -46,7 +46,25 @@
     .libPaths(c("/rstudio/packages", .libPaths()))
     ```
 
-1. Thats it! You can work in Rstudio as usual. To stop Rstudio server, save work, logout from Rstudio in browser, and use Control-C in console to stop Rstudio server.
+1. Thats it! You can work in Rstudio as usual. To stop Rstudio server: save work, logout from Rstudio in browser, and press Control-C in the terminal window where podman command was run.
+
+## Appendix
+
+- It would be good to set maximum resource usage limit for memory so that your container does not end up using more memory than expected and also for compute resource to be available for others in lab. This can be set by 
+
+    ```
+    install.packages("unix") 
+    library(unix)
+    rlimit_as(1e100)  # sets availbable memory to ~100GB
+    ```
+
+<!---->
+<!--     ``` -->
+<!--     ulimit -Sv max_mem_limit_in_kilobytes -->
+<!--     ``` -->
+
+- To run a batch job on the dedinated node, submit to partition ```hpcx_macosko```
+
 
 
 ## References
