@@ -11,9 +11,9 @@
 
 1. Login to Macosko lab dedicated node from the login node
 
+   <!--ssh <username>@slurm-bits-bigmem-d002-->
    ```
-   ssh <username>@slurm-bits-bigmem-d002
-
+   srun -C container --nodes=1  --mem=128GB --cpus-per-task=4 --pty /bin/bash
    ```
 
 1. Make a directories ~/rstudio/packages and ~/rstudio/workdir
