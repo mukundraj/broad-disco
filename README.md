@@ -34,6 +34,7 @@
    ```
    podman run --name rstudio_$(whoami) -tid -e PASSWORD=<pick_a_password> -p <port_number>:8787 -v "$(realpath ./rstudio):/rstudio:rw" rocker/rstudio
    ```
+   When running this command first time, a small menu will appear in the commandline presenting options available to fetch the container image from. Select the option starting with ```docker.io/library/```.
    <!--```-->
    <!--podman run --rm -ti -e PASSWORD=<pick_a_password> -p <port_number>:8787 -v "$(realpath ./rstudio):/rstudio:rw" rocker/rstudio-->
    <!--```-->
