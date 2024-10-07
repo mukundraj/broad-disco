@@ -47,7 +47,7 @@
 1. Set the workdir and library path in Rstudio console _(needs to be run each time Rstudio server is started)_
 
    ```
-   setwd('rstudio/workdir')
+   setwd('/rstudio/workdir')
    .libPaths(c("/rstudio/packages", .libPaths()))
    ```
 
