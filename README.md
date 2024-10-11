@@ -133,7 +133,24 @@
     use_python("/rstudio/miniconda3/bin/python")
     py_eval("1+1") # should produce output: 2 if it's set up ok
     ```
-    
+
+- Useful slurm commands
+    - show all running jobs
+   ```
+    squeue -t RUNNING
+   ```
+    - see all jobs by a user  
+   ```
+    squeue -u <username>
+   ```
+    - cancel all jobs by a user 
+    ```
+    scancel -u <username>
+    ```
+    - cancel job by jobid
+    ```
+    scancel <jobid>
+    ```
 
 ## References
 
@@ -144,3 +161,5 @@
 - [BITS manual for using containers on DISCO](https://broad.service-now.com/kb_view.do?sys_kb_id=8923f956479aa91411484438946d4383)
 - [Rocker project](https://rocker-project.org/) for Rstudio in a container
 - [BITS manual for transfering data between DISCO and Google Bucket](https://broad.service-now.com/kb_view.do?sys_kb_id=e66ee8124777869014397fdc416d437b&sysparm_rank=1&sysparm_tsqueryId=87f8b0bd4784d25014397fdc416d43de)
+- [Useful slurm commands](https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/)
+- [BITS Backstage Disco Documentation](https://backstage.broadinstitute.org/docs/default/component/disco-docs/gpu-usage)
