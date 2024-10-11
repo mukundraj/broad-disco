@@ -116,6 +116,23 @@
     echo "$HOST_IP:$PORT_NUM"
     echo "***************"
     ```
+
+- To use ```reticulate``` library in Rstudio
+
+    In Rstudio terminal:
+    ```
+    mkdir -p /rstudio/miniconda3
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /rstudio/miniconda3/miniconda.sh
+    bash /rstudio/miniconda3/miniconda.sh -b -u -p /rstudio/miniconda3
+    rm /rstudio/miniconda3/miniconda.sh
+    ```
+
+    then in R console:
+    ```
+    library(reticulate)
+    use_python("/rstudio/miniconda3/bin/python")
+    py_eval("1+1") # should produce output: 2 if it's set up ok
+    ```
     
 
 ## References
