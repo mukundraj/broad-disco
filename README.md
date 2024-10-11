@@ -65,31 +65,31 @@
 - Unlike cloud VMs, resources on this DISCO node would be shared among several
   users simultanously. Although there is no need to _turn off_ the machine, the
   memory on this machine is shared among all active users. Therefore, it would
-  help if everyone clears their R environment when they no longer need the
-  objects to be loaded and also remember to log off Rstudio session when done.
-  This would make the memory available for use by any other users.
+  help if everyone logs off Rstudio session, stops container, and ends allocation when done. This would make the memory available for use by any other users.
 
-- If you are not planning to use Rstudio for an extended period of time, it'd be good practice to stop the container using the following command:
+- If you are not planning to use Rstudio for an extended period of time, it'd be good practice to log off Rstudio via button on top right in the Rstudio UI; then stop the container using the following command:
 
   ```
   podman stop rstudio_<userid>
   ```
+    and finally exit the slurm allocation using
+   ```
+   exit
+   ```
 
-  and restart the container when needed using the following command.
-
-  ```
-  podman start rstudio_<userid>
-  ```
+  <!--and restart the container when needed using the following command.-->
+  <!---->
+  <!--```-->
+  <!--podman start rstudio_<userid>-->
+  <!--```-->
 
   This would be akin to stoping the cloud VM instance.
 
-- It would be good to set maximum resource usage limit for memory so that your container does not end up using more memory than expected and also for compute resource to be available for others in lab. This can be set by
-
-  ```
-  install.packages("unix")
-  library(unix)
-  rlimit_as(1e100)  # sets availbable memory to ~100GB
-  ```
+<!--- It would be good to set maximum resource usage limit for memory so that your container does not end up using more memory than expected and also for compute resource to be available for others in lab. This can be set by-->
+<!---->
+<!--install.packages("unix")-->
+<!--library(unix)-->
+<!--rlimit_as(1e100)  # sets availbable memory to ~100GB-->
 
 <!---->
 <!--     ``` -->
