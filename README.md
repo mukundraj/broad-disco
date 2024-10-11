@@ -108,6 +108,16 @@
   lsof -i -P
   ```
 
+- A nifty script to find next available port number (courtesy of Matthew Shabet)
+    ```
+    HOST_IP=$(hostname -i)
+    PORT_NUM=$(for port in {8000..9000}; do ss -tuln | grep -q ":$port " || { echo "$port"; break; }; done)
+    echo "***************"
+    echo "$HOST_IP:$PORT_NUM"
+    echo "***************"
+    ```
+    
+
 ## References
 
 \* BITS manuals require Broad credentials for access
