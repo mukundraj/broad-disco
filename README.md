@@ -151,6 +151,18 @@
     ```
     scancel <jobid>
     ```
+    - show info for specific job via jobid
+    ```
+    scontrol show jobid -dd <jobid>
+    ```
+    - show userid+resource allocations on dedicated partition
+    ```
+    squeue -t RUNNING |  awk '$2="hpcx_maco" && NR>1 { print $1}' | xargs -I{} scontrol show jobid -dd {} | grep -e mem= -e UserId
+    ```
+    - show only memory allocations on dedicated partition
+    ```
+    squeue -t RUNNING |  awk '$2="hpcx_maco" && NR>1 { print $1}' | xargs -I{} scontrol show jobid -dd {} | grep -e mem= | cut -d, -f2
+    ```
 
 ## References
 
